@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ポートフォリオ | インフォサクセス – SEOライター・コンサルタント</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0f1f3d;
+  --navy-mid: #1a3260;
+  --blue: #1e4db7;
+  --blue-light: #3b6fd4;
+  --accent: #00c896;
+  --accent-dark: #00a87c;
+  --bg: #f4f7fc;
+  --white: #ffffff;
+  --gray-100: #f0f4f8;
+  --gray-200: #e2e8f0;
+  --gray-500: #64748b;
+  --gray-700: #334155;
+  --text: #1e293b;
+  --text-light: #475569;
+  --rank-gold: #f59e0b;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  line-height: 1.8;
+}
+
+/* ===== HEADER ===== */
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(15, 31, 61, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  transition: box-shadow .3s;
+}
+header.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.3); }
+.header-logo {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.1rem;
+  color: var(--white);
+  text-decoration: none;
+  letter-spacing: .05em;
+}
+.header-logo span { color: var(--accent); }
+nav { display: flex; gap: 1.8rem; }
+nav a {
+  color: rgba(255,255,255,.75);
+  text-decoration: none;
+  font-size: .82rem;
+  letter-spacing: .05em;
+  transition: color .2s;
+}
+nav a:hover { color: var(--accent); }
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 50%, #0d2d52 100%);
+  display: flex;
+  align-items: center;
+  padding: 100px 2rem 60px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%; right: -20%;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(0,200,150,.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30%; left: -10%;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(30,77,183,.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: rgba(0,200,150,.12);
+  border: 1px solid rgba(0,200,150,.3);
+  color: var(--accent);
+  font-size: .8rem;
+  letter-spacing: .1em;
+  padding: .35rem 1rem;
+  border-radius: 100px;
+  margin-bottom: 1.8rem;
+}
+.hero-badge::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.8)} }
+
+.hero h1 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: var(--white);
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+}
+.hero h1 em {
+  font-style: normal;
+  color: var(--accent);
+}
+.hero-sub {
+  color: rgba(255,255,255,.7);
+  font-size: 1rem;
+  max-width: 600px;
+  line-height: 1.9;
+  margin-bottom: 2.5rem;
+}
+.hero-stats {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+.stat-item {
+  text-align: center;
+}
+.stat-num {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 2.2rem;
+  color: var(--accent);
+  font-weight: 700;
+  line-height: 1;
+}
+.stat-num sup { font-size: 1rem; }
+.stat-label {
+  font-size: .78rem;
+  color: rgba(255,255,255,.55);
+  margin-top: .3rem;
+  letter-spacing: .05em;
+}
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  background: var(--accent);
+  color: var(--navy);
+  font-weight: 700;
+  font-size: .95rem;
+  padding: .9rem 2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background .2s, transform .2s;
+}
+.hero-cta:hover { background: var(--accent-dark); transform: translateY(-2px); }
+.hero-cta svg { width: 18px; height: 18px; }
+
+/* ===== SECTION BASE ===== */
+section {
+  padding: 80px 2rem;
+}
+.section-inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+.section-label {
+  display: inline-block;
+  font-size: .72rem;
+  letter-spacing: .18em;
+  color: var(--accent);
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: .7rem;
+}
+.section-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--navy);
+  margin-bottom: .6rem;
+}
+.section-desc {
+  color: var(--text-light);
+  font-size: .95rem;
+  max-width: 580px;
+  margin-bottom: 3rem;
+  line-height: 1.9;
+}
+.divider {
+  width: 40px; height: 3px;
+  background: var(--accent);
+  margin-bottom: 2rem;
+  border-radius: 2px;
+}
+
+/* reveal animation */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ===== PROFILE ===== */
+#profile { background: var(--white); }
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+.profile-text p {
+  color: var(--text-light);
+  line-height: 2;
+  margin-bottom: 1.2rem;
+  font-size: .95rem;
+}
+.profile-text strong { color: var(--navy); }
+
+.profile-meta {
+  background: var(--gray-100);
+  border-radius: 12px;
+  padding: 2rem;
+}
+.meta-row {
+  display: flex;
+  border-bottom: 1px solid var(--gray-200);
+  padding: .9rem 0;
+  font-size: .88rem;
+}
+.meta-row:last-child { border-bottom: none; }
+.meta-label {
+  min-width: 120px;
+  color: var(--gray-500);
+  font-weight: 500;
+}
+.meta-val { color: var(--text); }
+
+/* ===== STRENGTHS ===== */
+#strengths { background: var(--bg); }
+.strengths-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.strength-card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 2rem;
+  border-top: 3px solid var(--accent);
+  transition: transform .2s, box-shadow .2s;
+}
+.strength-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,.08); }
+.strength-icon {
+  width: 44px; height: 44px;
+  background: rgba(0,200,150,.1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  color: var(--accent);
+}
+.strength-icon svg { width: 22px; height: 22px; }
+.strength-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: .8rem;
+}
+.strength-card p { font-size: .88rem; color: var(--text-light); line-height: 1.8; }
+
+/* ===== SERVICES ===== */
+#services { background: var(--white); }
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.service-chip {
+  background: var(--gray-100);
+  border-radius: 10px;
+  padding: 1.2rem 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  font-size: .9rem;
+  color: var(--text);
+  font-weight: 500;
+  border: 1px solid var(--gray-200);
+  transition: border-color .2s, background .2s;
+}
+.service-chip:hover { border-color: var(--accent); background: rgba(0,200,150,.05); }
+.service-chip svg { color: var(--accent); flex-shrink: 0; width: 18px; height: 18px; }
+
+/* ===== GENRES ===== */
+#genres { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); }
+#genres .section-title { color: var(--white); }
+#genres .section-label { color: var(--accent); }
+#genres .section-desc { color: rgba(255,255,255,.65); }
+.genre-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .8rem;
+  margin-bottom: 1.5rem;
+}
+.genre-tag {
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.15);
+  color: rgba(255,255,255,.85);
+  padding: .5rem 1.2rem;
+  border-radius: 100px;
+  font-size: .88rem;
+  transition: background .2s, border-color .2s;
+}
+.genre-tag:hover { background: rgba(0,200,150,.15); border-color: var(--accent); }
+.genre-tag.ymyl {
+  background: rgba(0,200,150,.15);
+  border-color: rgba(0,200,150,.4);
+  color: var(--accent);
+}
+.genre-note {
+  color: rgba(255,255,255,.5);
+  font-size: .83rem;
+  margin-top: 1rem;
+}
+
+/* ===== WORKS / RANKINGS ===== */
+#works { background: var(--bg); }
+.works-tabs {
+  display: flex;
+  gap: .5rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--gray-200);
+}
+.tab-btn {
+  background: none;
+  border: none;
+  padding: .7rem 1.4rem;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: .9rem;
+  cursor: pointer;
+  color: var(--gray-500);
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  transition: color .2s, border-color .2s;
+}
+.tab-btn.active { color: var(--navy); border-bottom-color: var(--accent); font-weight: 700; }
+
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+.ranking-table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+.ranking-table th {
+  background: var(--navy);
+  color: rgba(255,255,255,.8);
+  padding: .9rem 1rem;
+  text-align: left;
+  font-size: .8rem;
+  font-weight: 500;
+  letter-spacing: .05em;
+}
+.ranking-table th:first-child { border-radius: 8px 0 0 0; }
+.ranking-table th:last-child { border-radius: 0 8px 0 0; }
+.ranking-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--gray-200);
+  vertical-align: top;
+  color: var(--text);
+}
+.ranking-table tr:last-child td { border-bottom: none; }
+.ranking-table tr:hover td { background: rgba(0,200,150,.03); }
+.ranking-table a { color: var(--blue); text-decoration: none; word-break: break-all; font-size: .83rem; }
+.ranking-table a:hover { text-decoration: underline; }
+
+.rank-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  font-weight: 900;
+  font-size: .9rem;
+  font-family: 'Noto Serif JP', serif;
+}
+.rank-1 { background: linear-gradient(135deg, #ffd700, #f59e0b); color: #7c3700; }
+.rank-4 { background: var(--gray-100); color: var(--navy); border: 2px solid var(--gray-200); }
+
+.works-grid {
+  display: grid;
+  gap: 1rem;
+}
+.work-card {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 1.4rem 1.6rem;
+  border: 1px solid var(--gray-200);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: start;
+  transition: border-color .2s, box-shadow .2s;
+}
+.work-card:hover { border-color: var(--accent); box-shadow: 0 4px 16px rgba(0,200,150,.1); }
+.work-title {
+  font-size: .9rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: .3rem;
+  line-height: 1.5;
+}
+.work-url { font-size: .78rem; color: var(--blue-light); word-break: break-all; text-decoration: none; }
+.work-url:hover { text-decoration: underline; }
+.work-badge {
+  white-space: nowrap;
+  background: var(--gray-100);
+  color: var(--text-light);
+  font-size: .75rem;
+  padding: .25rem .7rem;
+  border-radius: 100px;
+}
+
+/* ===== OWN SITE ===== */
+#ownsite { background: var(--white); }
+.ownsite-card {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+  border-radius: 16px;
+  padding: 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: center;
+}
+.ownsite-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.4rem;
+  color: var(--white);
+  margin-bottom: .6rem;
+}
+.ownsite-url {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  color: var(--accent);
+  font-size: .9rem;
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+.ownsite-url:hover { text-decoration: underline; }
+.ownsite-desc { color: rgba(255,255,255,.7); font-size: .9rem; line-height: 1.8; }
+.ownsite-kpi {
+  text-align: center;
+  background: rgba(0,200,150,.12);
+  border: 1px solid rgba(0,200,150,.25);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+}
+.kpi-num {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 2.5rem;
+  color: var(--accent);
+  font-weight: 700;
+  line-height: 1;
+}
+.kpi-label { color: rgba(255,255,255,.6); font-size: .78rem; margin-top: .4rem; }
+
+/* ===== PHILOSOPHY ===== */
+#philosophy { background: var(--bg); }
+.philosophy-list {
+  display: grid;
+  gap: 1rem;
+  counter-reset: phil;
+}
+.philosophy-item {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 1.4rem 1.8rem;
+  display: flex;
+  gap: 1.2rem;
+  align-items: start;
+  border: 1px solid var(--gray-200);
+}
+.phil-num {
+  counter-increment: phil;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent);
+  min-width: 28px;
+  padding-top: .1rem;
+}
+.philosophy-item p { font-size: .93rem; color: var(--text-light); line-height: 1.8; }
+.philosophy-item p strong { color: var(--navy); }
+
+/* ===== CONDITIONS ===== */
+#conditions {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+}
+#conditions .section-title { color: var(--white); }
+#conditions .section-label { color: var(--accent); }
+.conditions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+.condition-card {
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+}
+.condition-icon {
+  width: 48px; height: 48px;
+  background: rgba(0,200,150,.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  color: var(--accent);
+}
+.condition-icon svg { width: 22px; height: 22px; }
+.condition-label { color: rgba(255,255,255,.5); font-size: .78rem; letter-spacing: .08em; margin-bottom: .5rem; }
+.condition-val { color: var(--white); font-size: 1.15rem; font-weight: 700; }
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--navy);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  color: rgba(255,255,255,.4);
+  font-size: .82rem;
+}
+footer .footer-brand {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.1rem;
+  color: var(--white);
+  margin-bottom: .5rem;
+}
+footer span { color: var(--accent); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  nav { display: none; }
+  .profile-grid { grid-template-columns: 1fr; }
+  .ownsite-card { grid-template-columns: 1fr; }
+  .hero-stats { gap: 1.5rem; }
+  .stat-num { font-size: 1.8rem; }
+  section { padding: 60px 1.2rem; }
+  .ranking-table { font-size: .8rem; }
+  .ranking-table td, .ranking-table th { padding: .7rem .6rem; }
+  .work-card { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .hero h1 { font-size: 1.7rem; }
+  .strengths-grid { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header id="site-header">
+  <a href="#" class="header-logo">Info<span>Success</span></a>
+  <nav>
+    <a href="#profile">プロフィール</a>
+    <a href="#strengths">強み</a>
+    <a href="#works">実績</a>
+    <a href="#genres">ジャンル</a>
+    <a href="#conditions">対応条件</a>
+  </nav>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-badge">SEOライター ＆ コンサルタント</div>
+    <h1>検索意図から設計する、<br><em>成果につながるSEO</em>コンテンツ</h1>
+    <p class="hero-sub">
+      2011年より自サイト運営でSEOを実践し、月収100万円を達成。
+      キーワード選定から構成・執筆・リライトまで一貫して対応。
+      競合分析と検索意図の深掘りで、継続的な流入を実現します。
+    </p>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">15<sup>年</sup></div>
+        <div class="stat-label">ライター歴</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">5<sup>年</sup></div>
+        <div class="stat-label">SEOコンサル歴</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">12<sup>年+</sup></div>
+        <div class="stat-label">WordPress運用歴</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">100<sup>万</sup></div>
+        <div class="stat-label">月収最高実績</div>
+      </div>
+    </div>
+    <a href="#works" class="hero-cta">
+      実績を見る
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<!-- ===== PROFILE ===== -->
+<section id="profile">
+  <div class="section-inner">
+    <div class="section-label">Profile</div>
+    <h2 class="section-title">プロフィール</h2>
+    <div class="divider"></div>
+    <div class="profile-grid reveal">
+      <div class="profile-text">
+        <p>
+          2011年よりSEOを体系的に学び、アフィリエイトによる自サイト運営で<strong>月収100万円を達成</strong>。2016年に自営業として独立し、現在はSEOライター・コンサルタントとして活動しています。
+        </p>
+        <p>
+          SEO記事の構成作成から執筆・既存記事のリライトまで一貫して対応。<strong>検索意図の深掘り</strong>と競合サイト分析を重視し、安定した流入獲得につながる設計が強みです。
+        </p>
+        <p>
+          キーワード選定から内容最適化までを担い、検索順位向上と成果創出を目的とした記事制作を行うライター兼SEOコンサルタントとして活動中です。
+        </p>
+      </div>
+      <div class="profile-meta">
+        <div class="meta-row">
+          <span class="meta-label">屋号</span>
+          <span class="meta-val">インフォサクセス</span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-label">ライター歴</span>
+          <span class="meta-val">15年</span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-label">SEOコンサル歴</span>
+          <span class="meta-val">5年</span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-label">WordPress歴</span>
+          <span class="meta-val">12年以上</span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-label">独立</span>
+          <span class="meta-val">2016年</span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-label">資格</span>
+          <span class="meta-val">SEO検定1級</span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-label">活動開始</span>
+          <span class="meta-val">アフィリエイト運営 2011年〜</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STRENGTHS ===== -->
+<section id="strengths">
+  <div class="section-inner">
+    <div class="section-label">Strengths</div>
+    <h2 class="section-title">SEOにおける強み</h2>
+    <div class="divider"></div>
+    <p class="section-desc">
+      検索意図の分解・競合分析・情報設計──3つの柱で、短期的な順位変動に左右されない継続的な成果を提供します。
+    </p>
+    <div class="strengths-grid">
+      <div class="strength-card reveal">
+        <div class="strength-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+          </svg>
+        </div>
+        <h3>検索意図の精密な分解</h3>
+        <p>顕在ニーズと潜在ニーズに分解し、構成段階で情報の過不足を精密に調整。ユーザーの検索意図を起点に全体設計を行います。</p>
+      </div>
+      <div class="strength-card reveal">
+        <div class="strength-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+          </svg>
+        </div>
+        <h3>競合サイト分析と差別化</h3>
+        <p>上位表示ページの傾向や評価要因を分析し、内容・切り口・情報深度に差別化を持たせた記事設計を行います。</p>
+      </div>
+      <div class="strength-card reveal">
+        <div class="strength-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/><polyline points="13 2 13 9 20 9"/>
+          </svg>
+        </div>
+        <h3>サイト全体を意識した設計</h3>
+        <p>キーワード単体ではなくページ全体の役割を意識し、サイト内の重複やカニバリゼーションを防ぐ設計を重視します。</p>
+      </div>
+      <div class="strength-card reveal">
+        <div class="strength-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+        </div>
+        <h3>継続的な成果へのコミット</h3>
+        <p>短期的な順位変動に左右されず、継続的な流入と成果につながるSEOコンテンツを提供。安定した集客基盤の構築を支援します。</p>
+      </div>
+      <div class="strength-card reveal">
+        <div class="strength-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/>
+          </svg>
+        </div>
+        <h3>内部リンク・導線設計</h3>
+        <p>内部リンクと導線設計により、ユーザー行動とSEO評価の両立を図ります。タイトル・見出し・本文を連動させ一貫した情報構造を構築します。</p>
+      </div>
+      <div class="strength-card reveal">
+        <div class="strength-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+          </svg>
+        </div>
+        <h3>YMYL領域への対応</h3>
+        <p>医療・健康・金融など信頼性が求められるYMYL領域でも、公式情報・一次情報を重視した構成設計・執筆を行います。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services">
+  <div class="section-inner">
+    <div class="section-label">Services</div>
+    <h2 class="section-title">対応業務範囲</h2>
+    <div class="divider"></div>
+    <div class="services-grid reveal">
+      <div class="service-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        キーワード選定
+      </div>
+      <div class="service-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+        検索意図分析
+      </div>
+      <div class="service-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        競合記事分析
+      </div>
+      <div class="service-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h7"/></svg>
+        構成案作成
+      </div>
+      <div class="service-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+        SEO記事執筆
+      </div>
+      <div class="service-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+        既存記事のリライト
+      </div>
+      <div class="service-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+        内部リンク設計の提案
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GENRES ===== -->
+<section id="genres">
+  <div class="section-inner">
+    <div class="section-label">Genres</div>
+    <h2 class="section-title">得意なジャンル</h2>
+    <div class="divider"></div>
+    <p class="section-desc">幅広い業種・ジャンルに対応。特にYMYL領域での実績を多数保有しています。</p>
+    <div class="genre-tags reveal">
+      <span class="genre-tag ymyl">美容・医療・健康・ヘルスケア</span>
+      <span class="genre-tag">SEO対策・Web集客</span>
+      <span class="genre-tag">資格試験・勉強法</span>
+      <span class="genre-tag ymyl">投資・資産運用</span>
+      <span class="genre-tag">副業・フリーランス</span>
+      <span class="genre-tag">マーケティング戦略</span>
+      <span class="genre-tag">起業・ビジネス</span>
+      <span class="genre-tag ymyl">転職・キャリア</span>
+      <span class="genre-tag">子育て・教育</span>
+      <span class="genre-tag">AI・テクノロジー</span>
+    </div>
+    <p class="genre-note">※ 水色タグはYMYL領域（医療・健康・金融等）の実績あり</p>
+  </div>
+</section>
+
+<!-- ===== WORKS ===== -->
+<section id="works">
+  <div class="section-inner">
+    <div class="section-label">Works</div>
+    <h2 class="section-title">ライティング実績</h2>
+    <div class="divider"></div>
+    <p class="section-desc">担当範囲：記事構成の作成および執筆。検索順位は調査時点のもので変動する場合があります。</p>
+
+    <div class="works-tabs">
+      <button class="tab-btn active" onclick="switchTab('ranking', this)">検索順位実績</button>
+      <button class="tab-btn" onclick="switchTab('other', this)">執筆実績（抜粋）</button>
+      <button class="tab-btn" onclick="switchTab('ownsite-tab', this)">自サイト運営実績</button>
+    </div>
+
+    <!-- TAB: ranking -->
+    <div id="tab-ranking" class="tab-panel active reveal">
+      <table class="ranking-table">
+        <thead>
+          <tr>
+            <th style="width:60px">順位</th>
+            <th>キーワード</th>
+            <th>記事URL</th>
+            <th>分類</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="rank-badge rank-1">1位</span></td>
+            <td>閉店祝い 花</td>
+            <td><a href="https://hanaprime.jp/magazine/archives/11356" target="_blank" rel="noopener">hanaprime.jp/magazine/archives/11356</a><br><small style="color:#94a3b8">2026/02/04時点</small></td>
+            <td>新規作成</td>
+          </tr>
+          <tr>
+            <td><span class="rank-badge rank-1">1位</span></td>
+            <td>公演祝い 花</td>
+            <td><a href="https://hanaprime.jp/magazine/archives/4678" target="_blank" rel="noopener">hanaprime.jp/magazine/archives/4678</a><br><small style="color:#94a3b8">2026/03/12確認</small></td>
+            <td>新規作成</td>
+          </tr>
+          <tr>
+            <td><span class="rank-badge rank-1">1位</span></td>
+            <td>離職率 計算</td>
+            <td><a href="https://mirai-works.co.jp/business-pro/business-column/turnoverrate/" target="_blank" rel="noopener">mirai-works.co.jp/business-pro/business-column/turnoverrate/</a><br><small style="color:#94a3b8">2026/03/12確認</small></td>
+            <td>新規作成</td>
+          </tr>
+          <tr>
+            <td><span class="rank-badge rank-4">4位</span></td>
+            <td>記憶力 アプリ</td>
+            <td><a href="https://wonder-education.co.jp/media/workingmemorywokitaeru/" target="_blank" rel="noopener">wonder-education.co.jp/media/workingmemorywokitaeru/</a><br><small style="color:#94a3b8">2026/02/04時点</small></td>
+            <td>新規作成</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- TAB: other -->
+    <div id="tab-other" class="tab-panel reveal">
+      <div class="works-grid">
+        <div class="work-card">
+          <div>
+            <div class="work-title">採用担当者向け｜フリーランスマッチングサービスの選び方と注意点</div>
+            <a href="https://www.freee.co.jp/kb/kb-deals/freelance-matching-services/" target="_blank" rel="noopener" class="work-url">freee.co.jp/kb/kb-deals/freelance-matching-services/</a>
+          </div>
+          <span class="work-badge">ビジネス</span>
+        </div>
+        <div class="work-card">
+          <div>
+            <div class="work-title">人材紹介手数料の相場は？計算方法と返還金制度をわかりやすく解説</div>
+            <a href="https://www.saiyo-doda.jp/service/recruitment/column/cost-recruitment" target="_blank" rel="noopener" class="work-url">saiyo-doda.jp/service/recruitment/column/cost-recruitment</a>
+          </div>
+          <span class="work-badge">ビジネス</span>
+        </div>
+        <div class="work-card">
+          <div>
+            <div class="work-title">人材不足解消の事例10選！経済産業省による対応事例を解説</div>
+            <a href="https://mirai-works.co.jp/business-pro/business-column/human_resources/" target="_blank" rel="noopener" class="work-url">mirai-works.co.jp/business-pro/business-column/human_resources/</a>
+          </div>
+          <span class="work-badge">ビジネス</span>
+        </div>
+        <div class="work-card">
+          <div>
+            <div class="work-title">ジョブ型雇用とメンバーシップ型の違いは？メリット・デメリットと事例を解説</div>
+            <a href="https://mirai-works.co.jp/business-pro/business-column/job_membership/" target="_blank" rel="noopener" class="work-url">mirai-works.co.jp/business-pro/business-column/job_membership/</a>
+          </div>
+          <span class="work-badge">ビジネス</span>
+        </div>
+        <div class="work-card">
+          <div>
+            <div class="work-title">SEO対策とコンテンツマーケティングの違いを徹底解説</div>
+            <a href="https://wehubworks.com/colum-knowledge/seo-measures-content-marketing/" target="_blank" rel="noopener" class="work-url">wehubworks.com/colum-knowledge/seo-measures-content-marketing/</a>
+          </div>
+          <span class="work-badge">SEO・Web</span>
+        </div>
+        <div class="work-card">
+          <div>
+            <div class="work-title">h1タグのSEO効果は？7つの使い方と注意点を解説</div>
+            <a href="https://www.webdeki.com/column/801/" target="_blank" rel="noopener" class="work-url">webdeki.com/column/801/</a>
+          </div>
+          <span class="work-badge">SEO・Web</span>
+        </div>
+        <div class="work-card">
+          <div>
+            <div class="work-title">コンテンツSEOとは？ メリット・デメリットと具体的なやり方を解説</div>
+            <a href="https://www.rhcnet.com/article/contents_seo.html" target="_blank" rel="noopener" class="work-url">rhcnet.com/article/contents_seo.html</a>
+          </div>
+          <span class="work-badge">SEO・Web</span>
+        </div>
+        <div class="work-card">
+          <div>
+            <div class="work-title">AIの転移学習とは？ファインチューニングとの違いとメリット・デメリットを紹介</div>
+            <a href="https://mirai-works.co.jp/business-pro/business-column/transfer_learning/" target="_blank" rel="noopener" class="work-url">mirai-works.co.jp/business-pro/business-column/transfer_learning/</a>
+          </div>
+          <span class="work-badge">AI・テクノロジー</span>
+        </div>
+        <div class="work-card">
+          <div>
+            <div class="work-title">フリーランスと業務委託の違いは？契約種類と依頼手順・注意点を解説</div>
+            <a href="https://tech-stock.com/magazine/difference-between-outsourcing-and-freelance/" target="_blank" rel="noopener" class="work-url">tech-stock.com/magazine/difference-between-outsourcing-and-freelance/</a>
+          </div>
+          <span class="work-badge">キャリア</span>
+        </div>
+        <div class="work-card">
+          <div>
+            <div class="work-title">東京で医療脱毛が安い人気おすすめクリニック16選比較！全身脱毛の価格は？</div>
+            <a href="https://luna-beauty-clinic.com/magazine/datsumou-tokyo/" target="_blank" rel="noopener" class="work-url">luna-beauty-clinic.com/magazine/datsumou-tokyo/</a>
+          </div>
+          <span class="work-badge">美容・健康</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: ownsite -->
+    <div id="tab-ownsite-tab" class="tab-panel reveal">
+      <div class="ownsite-card">
+        <div>
+          <div class="ownsite-title">包茎手術なび</div>
+          <a href="https://hokei-navi.com/" target="_blank" rel="noopener" class="ownsite-url">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+            hokei-navi.com
+          </a>
+          <div class="ownsite-desc">
+            包茎治療・クリニック情報の解説アフィリエイトサイト。全国の包茎手術クリニック比較・包茎の基礎知識・ED治療など幅広いコンテンツを自社運営。<br>
+            SEO設計・構成・執筆・サイト管理をすべて担当。ジャンル：医療・健康
+          </div>
+        </div>
+        <div class="ownsite-kpi">
+          <div class="kpi-num">100<span style="font-size:1.2rem">万</span></div>
+          <div class="kpi-label">月収最高達成</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PHILOSOPHY ===== -->
+<section id="philosophy">
+  <div class="section-inner">
+    <div class="section-label">Philosophy</div>
+    <h2 class="section-title">SEO設計の考え方</h2>
+    <div class="divider"></div>
+    <div class="philosophy-list">
+      <div class="philosophy-item reveal">
+        <div class="phil-num">01</div>
+        <p><strong>検索キーワードではなく、ユーザーの検索意図を起点</strong>に全体設計を行います</p>
+      </div>
+      <div class="philosophy-item reveal">
+        <div class="phil-num">02</div>
+        <p><strong>各ページの役割を明確にし、サイト内での重複や競合を防ぎます</strong></p>
+      </div>
+      <div class="philosophy-item reveal">
+        <div class="phil-num">03</div>
+        <p>タイトル・見出し・本文を連動させ、<strong>一貫性のある情報構造</strong>を構築します</p>
+      </div>
+      <div class="philosophy-item reveal">
+        <div class="phil-num">04</div>
+        <p><strong>内部リンクと導線設計</strong>により、ユーザー行動と評価の両立を図ります</p>
+      </div>
+      <div class="philosophy-item reveal">
+        <div class="phil-num">05</div>
+        <p>短期的な順位ではなく、<strong>継続的に成果が出る土台作り</strong>を重視します</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONDITIONS ===== -->
+<section id="conditions">
+  <div class="section-inner">
+    <div class="section-label">Conditions</div>
+    <h2 class="section-title">対応条件</h2>
+    <div class="divider" style="background:var(--accent)"></div>
+    <div class="conditions-grid reveal">
+      <div class="condition-card">
+        <div class="condition-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <div class="condition-label">文字単価目安</div>
+        <div class="condition-val">1.5円〜</div>
+      </div>
+      <div class="condition-card">
+        <div class="condition-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+        </div>
+        <div class="condition-label">月間対応本数</div>
+        <div class="condition-val">5〜15本</div>
+      </div>
+      <div class="condition-card">
+        <div class="condition-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <div class="condition-label">連絡可能時間</div>
+        <div class="condition-val">平日 9:00〜18:00</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-brand">Info<span>Success</span>　インフォサクセス</div>
+  <p>SEOライター・コンサルタント</p>
+</footer>
+
+<script>
+// Header scroll effect
+const header = document.getElementById('site-header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// Scroll reveal
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(el => { if(el.isIntersecting) el.target.classList.add('visible'); });
+}, { threshold: .1, rootMargin: '0px 0px -30px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Tab switching
+function switchTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
