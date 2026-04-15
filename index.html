@@ -815,14 +815,15 @@ footer span { color: var(--accent); }
 <section id="works">
   <div class="section-inner">
     <div class="section-label">Works</div>
-    <h2 class="section-title">ライティング実績</h2>
+    <h2 class="section-title">実績一覧</h2>
     <div class="divider"></div>
-    <p class="section-desc">担当範囲：記事構成の作成および執筆。検索順位は調査時点のもので変動する場合があります。</p>
+    <p class="section-desc">SEOライティング・コンサルティングからホームページ制作まで、幅広い実績を掲載しています。検索順位は調査時点のもので変動する場合があります。</p>
 
     <div class="works-tabs">
       <button class="tab-btn active" onclick="switchTab('ranking', this)">検索順位実績</button>
       <button class="tab-btn" onclick="switchTab('other', this)">執筆実績（抜粋）</button>
       <button class="tab-btn" onclick="switchTab('ownsite-tab', this)">自サイト運営実績</button>
+      <button class="tab-btn" onclick="switchTab('webprod-tab', this)">Web制作実績</button>
     </div>
 
     <!-- TAB: ranking -->
@@ -931,6 +932,26 @@ footer span { color: var(--accent); }
             <a href="https://luna-beauty-clinic.com/magazine/datsumou-tokyo/" target="_blank" rel="noopener" class="work-url">luna-beauty-clinic.com/magazine/datsumou-tokyo/</a>
           </div>
           <span class="work-badge">美容・健康</span>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- TAB: webprod -->
+    <div id="tab-webprod-tab" class="tab-panel reveal">
+      <div class="ownsite-card" style="margin-bottom:1.5rem">
+        <div>
+          <div class="ownsite-title">コスモスの里（介護老人保健施設）</div>
+          <a href="https://breakthrough-co.jp/cosmos/" target="_blank" rel="noopener" class="ownsite-url">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+            breakthrough-co.jp/cosmos/
+          </a>
+          <div style="color:rgba(255,255,255,.5);font-size:.82rem;margin-bottom:.8rem;">広島県福山市｜クライアント納品済み（2026年4月）</div>
+          <div class="ownsite-desc">
+            介護老人保健施設のホームページをHTML単一ファイルで制作。施設写真のbase64埋め込みにより外部ファイル不要の1ファイル完結構成を実現。<br>
+            スクロールアニメーション・レスポンシブデザイン・SVGアイコン実装。GitHub + Vercel でデプロイし、クライアント受領・本番稼働済み。<br>
+            <span style="color:var(--accent);font-size:.85rem;margin-top:.5rem;display:inline-block;">担当範囲：要件定義・デザイン・コーディング・デプロイ・修正対応</span>
+          </div>
         </div>
       </div>
     </div>
