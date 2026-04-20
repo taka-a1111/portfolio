@@ -72,7 +72,9 @@ nav a:hover { color: var(--accent); }
 /* ===== HERO ===== */
 .hero {
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 50%, #0d2d52 100%);
+  background:
+    linear-gradient(135deg, rgba(15,31,61,.92) 0%, rgba(26,50,96,.88) 50%, rgba(13,45,82,.92) 100%),
+    url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=1600&q=80') center/cover no-repeat;
   display: flex;
   align-items: center;
   padding: 100px 2rem 60px;
@@ -82,9 +84,10 @@ nav a:hover { color: var(--accent); }
 .hero::before {
   content: '';
   position: absolute;
-  top: -50%; right: -20%;
-  width: 700px; height: 700px;
-  background: radial-gradient(circle, rgba(0,200,150,.08) 0%, transparent 70%);
+  inset: 0;
+  background-image: linear-gradient(rgba(0,200,150,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,200,150,.04) 1px, transparent 1px);
+  background-size: 60px 60px;
   pointer-events: none;
 }
 .hero::after {
@@ -164,6 +167,39 @@ nav a:hover { color: var(--accent); }
   margin-top: .3rem;
   letter-spacing: .05em;
 }
+.hero-cards {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+.hero-card {
+  display: flex;
+  align-items: center;
+  gap: .9rem;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 12px;
+  padding: .9rem 1.4rem;
+  backdrop-filter: blur(8px);
+  transition: background .2s, border-color .2s;
+}
+.hero-card:hover { background: rgba(255,255,255,.1); border-color: rgba(0,200,150,.3); }
+.hero-card-icon {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.hero-card-num {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.2;
+}
+.hero-card-num span { font-size: .72rem; font-weight: 400; color: rgba(255,255,255,.6); margin-left: .2rem; }
+.hero-card-label { font-size: .72rem; color: rgba(255,255,255,.5); margin-top: .15rem; }
+
 .hero-cta {
   display: inline-flex;
   align-items: center;
@@ -225,9 +261,37 @@ section {
 #profile { background: var(--white); }
 .profile-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  grid-template-columns: 220px 1fr 1fr;
+  gap: 2.5rem;
   align-items: start;
+}
+.profile-avatar-col { display: flex; justify-content: center; }
+.profile-avatar-wrap { position: relative; width: 180px; }
+.profile-avatar-img {
+  width: 180px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(15,31,61,.18);
+  display: block;
+}
+.profile-avatar-badge {
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--navy);
+  color: var(--accent);
+  font-size: .72rem;
+  font-weight: 700;
+  padding: .35rem .9rem;
+  border-radius: 100px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,.2);
+  border: 1px solid rgba(0,200,150,.3);
 }
 .profile-text p {
   color: var(--text-light);
@@ -265,12 +329,22 @@ section {
 }
 .strength-card {
   background: var(--white);
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 2rem;
   border-top: 3px solid var(--accent);
-  transition: transform .2s, box-shadow .2s;
+  transition: transform .25s, box-shadow .25s;
+  position: relative;
+  overflow: hidden;
 }
-.strength-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,.08); }
+.strength-card::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 80px; height: 80px;
+  background: radial-gradient(circle at top right, rgba(0,200,150,.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.strength-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(15,31,61,.1); }
 .strength-icon {
   width: 44px; height: 44px;
   background: rgba(0,200,150,.1);
@@ -314,7 +388,11 @@ section {
 .service-chip svg { color: var(--accent); flex-shrink: 0; width: 18px; height: 18px; }
 
 /* ===== GENRES ===== */
-#genres { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); }
+#genres {
+  background:
+    linear-gradient(135deg, rgba(15,31,61,.97) 0%, rgba(26,50,96,.97) 100%),
+    url('https://images.unsplash.com/photo-1432821596592-e2c18b78144f?w=1200&q=60') center/cover no-repeat;
+}
 #genres .section-title { color: var(--white); }
 #genres .section-label { color: var(--accent); }
 #genres .section-desc { color: rgba(255,255,255,.65); }
@@ -346,7 +424,11 @@ section {
 }
 
 /* ===== WORKS / RANKINGS ===== */
-#works { background: var(--bg); }
+#works {
+  background: var(--bg);
+  background-image: radial-gradient(circle at 20% 50%, rgba(0,200,150,.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(30,77,183,.04) 0%, transparent 50%);
+}
 .works-tabs {
   display: flex;
   gap: .5rem;
@@ -404,7 +486,9 @@ section {
   font-family: 'Noto Serif JP', serif;
 }
 .rank-1 { background: linear-gradient(135deg, #ffd700, #f59e0b); color: #7c3700; }
-.rank-4 { background: var(--gray-100); color: var(--navy); border: 2px solid var(--gray-200); }
+.rank-2 { background: linear-gradient(135deg, #e8e8e8, #c0c0c0); color: #3a3a3a; }
+.rank-3 { background: linear-gradient(135deg, #f0c090, #cd7f32); color: #5c3010; }
+.rank-other { background: var(--gray-100); color: var(--navy); border: 2px solid var(--gray-200); }
 
 .works-grid {
   display: grid;
@@ -642,6 +726,13 @@ section {
 .condition-val { color: var(--white); font-size: 1.15rem; font-weight: 700; }
 
 /* ===== FOOTER ===== */
+.footer-deco {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  margin-bottom: 2rem;
+  opacity: .4;
+}
 footer {
   background: var(--navy);
   padding: 2.5rem 2rem;
@@ -661,6 +752,9 @@ footer span { color: var(--accent); }
 @media (max-width: 768px) {
   nav { display: none; }
   .profile-grid { grid-template-columns: 1fr; }
+  .profile-avatar-col { display: none; }
+  .hero-cards { gap: .6rem; }
+  .hero-card { padding: .7rem 1rem; }
   .ownsite-card { grid-template-columns: 1fr; }
   .hero-stats { gap: 1.5rem; }
   .stat-num { font-size: 1.8rem; }
@@ -697,7 +791,7 @@ footer span { color: var(--accent); }
     <p class="hero-sub">
       SEO記事ライティング・コンサルティングからWordPressサイト制作・GAS開発まで、
       Web集客に関わる業務をワンストップで対応。
-      2011年より自サイト運営でSEOを実践し、月収100万円を達成。
+      2011年より自サイト運営でSEOを実践し、成果を積み上げてきました。
     </p>
     <div class="hero-stats">
       <div class="stat-item">
@@ -713,12 +807,37 @@ footer span { color: var(--accent); }
         <div class="stat-label">WordPress運用歴</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num">100<sup>万</sup></div>
-        <div class="stat-label">月収最高実績</div>
-      </div>
-      <div class="stat-item">
         <div class="stat-num">5<sup>年+</sup></div>
         <div class="stat-label">GAS開発歴</div>
+      </div>
+    </div>
+    <div class="hero-cards">
+      <div class="hero-card">
+        <div class="hero-card-icon" style="background:rgba(0,200,150,.15);color:var(--accent)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <div>
+          <div class="hero-card-num">20<span>社以上</span></div>
+          <div class="hero-card-label">コンサル支援実績</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon" style="background:rgba(30,77,183,.2);color:#6b9fff">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+        </div>
+        <div>
+          <div class="hero-card-num">1位<span>獲得多数</span></div>
+          <div class="hero-card-label">SEO施策キーワード</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon" style="background:rgba(245,158,11,.15);color:#f59e0b">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+        </div>
+        <div>
+          <div class="hero-card-num">SEO<span>検定1級</span></div>
+          <div class="hero-card-label">公式認定資格保有</div>
+        </div>
       </div>
     </div>
     <a href="#works" class="hero-cta">
@@ -737,9 +856,22 @@ footer span { color: var(--accent); }
     <h2 class="section-title">プロフィール</h2>
     <div class="divider"></div>
     <div class="profile-grid reveal">
+      <div class="profile-avatar-col">
+        <div class="profile-avatar-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&q=80"
+            alt="デスクで作業するSEOライター・コンサルタント"
+            class="profile-avatar-img"
+          >
+          <div class="profile-avatar-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+            SEO検定1級
+          </div>
+        </div>
+      </div>
       <div class="profile-text">
         <p>
-          2011年よりSEOを体系的に学び、アフィリエイトによる自サイト運営で<strong>月収100万円を達成</strong>。2016年に自営業として独立し、SEOライター・コンサルタント・Web制作者として活動しています。
+          2011年よりSEOを体系的に学び、アフィリエイトによる自サイト運営でSEOを実践し、2016年に自営業として独立。SEOライター・コンサルタント・Web制作者として活動しています。
         </p>
         <p>
           SEO記事の構成作成から執筆・リライトに加え、<strong>WordPressサイト制作・HTML/CSS実装・Google Apps Script（GAS）開発</strong>まで幅広く対応。検索意図の深掘りと競合分析を軸に、流入獲得から導線設計まで一気通貫で支援します。
@@ -834,7 +966,7 @@ footer span { color: var(--accent); }
           </svg>
         </div>
         <h3>継続的な成果へのコミット</h3>
-        <p>短期的な順位変動に左右されず、継続的な流入と成果につながるSEOコンテンツを提供。安定した集客基盤の構築を支援します。</p>
+        <p>短期的な順位変動に左右されず、継続的な流入と成果につながるSEOコンテンツを提供し、安定した集客基盤の構築を支援します。</p>
       </div>
       <div class="strength-card reveal">
         <div class="strength-icon">
@@ -870,7 +1002,7 @@ footer span { color: var(--accent); }
           </svg>
         </div>
         <h3>Google Apps Script（GAS）開発</h3>
-        <p>スプレッドシート自動化・API連携・スクレイピングなど業務効率化ツールをGASで開発。Google Search Console・ChatGPT API等との連携実績あり。</p>
+        <p>スプレッドシート自動化・API連携・スクレイピングなど業務効率化ツールをGASで開発。Google Search Console・Claude API・ChatGPT APIなど外部サービスとの連携も実績多数です。</p>
       </div>
     </div>
   </div>
@@ -964,9 +1096,11 @@ footer span { color: var(--accent); }
 
     <div class="works-tabs">
       <button class="tab-btn active" onclick="switchTab('ranking', this)">検索順位実績</button>
+      <button class="tab-btn" onclick="switchTab('seo-consul', this)">SEOコンサル実績</button>
       <button class="tab-btn" onclick="switchTab('other', this)">執筆実績（抜粋）</button>
       <button class="tab-btn" onclick="switchTab('ownsite-tab', this)">自サイト運営実績</button>
       <button class="tab-btn" onclick="switchTab('webprod-tab', this)">Web制作実績</button>
+      <button class="tab-btn" onclick="switchTab('tools-tab', this)">ツール・GAS開発</button>
     </div>
 
     <!-- TAB: ranking -->
@@ -994,32 +1128,116 @@ footer span { color: var(--accent); }
             <td>新規作成</td>
           </tr>
           <tr>
-            <td><span class="rank-badge rank-4" style="background:var(--gray-100);color:var(--navy);border:2px solid var(--gray-200)">3位</span></td>
-            <td>IQ 平均</td>
-            <td><a href="https://wonder-education.co.jp/media/iqheikin/" target="_blank" rel="noopener">wonder-education.co.jp/media/iqheikin/</a></td>
+            <td><span class="rank-badge rank-1">1位</span></td>
+            <td>文章 暗記 コツ</td>
+            <td><a href="https://wonder-education.co.jp/media/bunshou-anki/" target="_blank" rel="noopener">wonder-education.co.jp/media/bunshou-anki/</a><br><small style="color:#94a3b8">2026/04/20時点</small></td>
+            <td>新規作成</td>
+          </tr>
+          <tr>
+            <td><span class="rank-badge rank-1">1位</span></td>
+            <td>暗記 コツ 社会人</td>
+            <td><a href="https://wonder-education.co.jp/media/ankinokotususyakaijin/" target="_blank" rel="noopener">wonder-education.co.jp/media/ankinokotususyakaijin/</a><br><small style="color:#94a3b8">2026/04/20時点</small></td>
+            <td>新規作成</td>
+          </tr>
+          <tr>
+            <td><span class="rank-badge rank-2">2位</span></td>
+            <td>スピーチ 覚え方</td>
+            <td><a href="https://wonder-education.co.jp/media/speech-anki/" target="_blank" rel="noopener">wonder-education.co.jp/media/speech-anki/</a><br><small style="color:#94a3b8">2026/04/20時点</small></td>
+            <td>新規作成</td>
+          </tr>
+          <tr>
+            <td><span class="rank-badge rank-2">2位</span></td>
+            <td>記憶術 本</td>
+            <td><a href="https://wonder-education.co.jp/media/recommendedmemorytechniquebooks/" target="_blank" rel="noopener">wonder-education.co.jp/media/recommendedmemorytechniquebooks/</a><br><small style="color:#94a3b8">2026/04/20時点</small></td>
+            <td>新規作成</td>
+          </tr>
+          <tr>
+            <td><span class="rank-badge rank-3">3位</span></td>
+            <td>円周率 暗記</td>
+            <td><a href="https://wonder-education.co.jp/media/ensyuritsu-anki/" target="_blank" rel="noopener">wonder-education.co.jp/media/ensyuritsu-anki/</a><br><small style="color:#94a3b8">2026/04/20時点</small></td>
+            <td>新規作成</td>
+          </tr>
+          <tr>
+            <td><span class="rank-badge rank-other">5位</span></td>
+            <td>記憶術 テクニック</td>
+            <td><a href="https://wonder-education.co.jp/media/mnemonic-techniques/" target="_blank" rel="noopener">wonder-education.co.jp/media/mnemonic-techniques/</a><br><small style="color:#94a3b8">2026/04/20時点</small></td>
             <td>新規作成</td>
           </tr>
         </tbody>
       </table>
     </div>
 
+    <!-- TAB: seo-consul -->
+    <div id="tab-seo-consul" class="tab-panel reveal">
+      <p style="font-size:.82rem;color:var(--text-light);margin-bottom:1.2rem;">既存サイトのSEO内部施策（タイトル・見出し・メタ・canonicalタグ等）を実施した改善実績です。順位は調査時点のもので変動する場合があります。</p>
+      <table class="ranking-table">
+        <thead>
+          <tr>
+            <th>対策KW</th>
+            <th style="width:80px">対策前</th>
+            <th style="width:80px">対策後</th>
+            <th style="width:90px">実施時期</th>
+            <th style="width:80px">経過</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>川崎　不妊治療</td>
+            <td style="text-align:center">13位</td>
+            <td style="text-align:center"><span class="rank-badge rank-2" style="width:36px;height:36px;font-size:.8rem;">2位</span></td>
+            <td>2024年4月</td>
+            <td style="text-align:center">24ヶ月</td>
+          </tr>
+          <tr>
+            <td>両国　時計買取</td>
+            <td style="text-align:center">3位</td>
+            <td style="text-align:center"><span class="rank-badge rank-1" style="width:36px;height:36px;font-size:.8rem;">1位</span></td>
+            <td>2024年4月</td>
+            <td style="text-align:center">24ヶ月</td>
+          </tr>
+          <tr>
+            <td>錦糸町　質屋</td>
+            <td style="text-align:center">9位</td>
+            <td style="text-align:center"><span class="rank-badge rank-other" style="width:36px;height:36px;font-size:.8rem;">5位</span></td>
+            <td>2024年8月</td>
+            <td style="text-align:center">20ヶ月</td>
+          </tr>
+          <tr>
+            <td>福岡市　心療内科</td>
+            <td style="text-align:center">18位</td>
+            <td style="text-align:center"><span class="rank-badge rank-other" style="width:36px;height:36px;font-size:.8rem;">4位</span></td>
+            <td>2024年8月</td>
+            <td style="text-align:center">20ヶ月</td>
+          </tr>
+          <tr>
+            <td>神奈川　不妊治療</td>
+            <td style="text-align:center">38位</td>
+            <td style="text-align:center"><span class="rank-badge rank-other" style="width:36px;height:36px;font-size:.8rem;">5位</span></td>
+            <td>2024年10月</td>
+            <td style="text-align:center">17ヶ月</td>
+          </tr>
+          <tr>
+            <td>天神　美容皮膚科</td>
+            <td style="text-align:center">30位</td>
+            <td style="text-align:center"><span class="rank-badge rank-other" style="width:36px;height:36px;font-size:.8rem;">14位</span></td>
+            <td>2024年10月</td>
+            <td style="text-align:center">17ヶ月</td>
+          </tr>
+          <tr>
+            <td>メガネ（EC）</td>
+            <td style="text-align:center">圏外</td>
+            <td style="text-align:center"><span class="rank-badge rank-other" style="width:36px;height:36px;font-size:.8rem;">73位</span></td>
+            <td>2024年11月</td>
+            <td style="text-align:center">17ヶ月</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size:.78rem;color:var(--text-light);margin-top:.8rem;">※ 主な施策内容：タイトル・h1〜h4・メタディスクリプション・STRONGタグ・nofollow設定・TOP記事修正・canonicalタグ設定</p>
+    </div>
+
     <!-- TAB: other -->
     <div id="tab-other" class="tab-panel reveal">
       <div class="works-grid">
-        <div class="work-card">
-          <div>
-            <div class="work-title">採用担当者向け｜フリーランスマッチングサービスの選び方と注意点</div>
-            <a href="https://www.freee.co.jp/kb/kb-deals/freelance-matching-services/" target="_blank" rel="noopener" class="work-url">freee.co.jp/kb/kb-deals/freelance-matching-services/</a>
-          </div>
-          <span class="work-badge">ビジネス</span>
-        </div>
-        <div class="work-card">
-          <div>
-            <div class="work-title">人材紹介手数料の相場は？計算方法と返還金制度をわかりやすく解説</div>
-            <a href="https://www.saiyo-doda.jp/service/recruitment/column/cost-recruitment" target="_blank" rel="noopener" class="work-url">saiyo-doda.jp/service/recruitment/column/cost-recruitment</a>
-          </div>
-          <span class="work-badge">ビジネス</span>
-        </div>
         <div class="work-card">
           <div>
             <div class="work-title">人材不足解消の事例10選！経済産業省による対応事例を解説</div>
@@ -1033,20 +1251,6 @@ footer span { color: var(--accent); }
             <a href="https://mirai-works.co.jp/business-pro/business-column/job_membership/" target="_blank" rel="noopener" class="work-url">mirai-works.co.jp/business-pro/business-column/job_membership/</a>
           </div>
           <span class="work-badge">ビジネス</span>
-        </div>
-        <div class="work-card">
-          <div>
-            <div class="work-title">SEO対策とコンテンツマーケティングの違いを徹底解説</div>
-            <a href="https://wehubworks.com/colum-knowledge/seo-measures-content-marketing/" target="_blank" rel="noopener" class="work-url">wehubworks.com/colum-knowledge/seo-measures-content-marketing/</a>
-          </div>
-          <span class="work-badge">SEO・Web</span>
-        </div>
-        <div class="work-card">
-          <div>
-            <div class="work-title">h1タグのSEO効果は？7つの使い方と注意点を解説</div>
-            <a href="https://www.webdeki.com/column/801/" target="_blank" rel="noopener" class="work-url">webdeki.com/column/801/</a>
-          </div>
-          <span class="work-badge">SEO・Web</span>
         </div>
         <div class="work-card">
           <div>
@@ -1068,13 +1272,6 @@ footer span { color: var(--accent); }
             <a href="https://tech-stock.com/magazine/difference-between-outsourcing-and-freelance/" target="_blank" rel="noopener" class="work-url">tech-stock.com/magazine/difference-between-outsourcing-and-freelance/</a>
           </div>
           <span class="work-badge">キャリア</span>
-        </div>
-        <div class="work-card">
-          <div>
-            <div class="work-title">東京で医療脱毛が安い人気おすすめクリニック16選比較！全身脱毛の価格は？</div>
-            <a href="https://luna-beauty-clinic.com/magazine/datsumou-tokyo/" target="_blank" rel="noopener" class="work-url">luna-beauty-clinic.com/magazine/datsumou-tokyo/</a>
-          </div>
-          <span class="work-badge">美容・健康</span>
         </div>
       </div>
     </div>
@@ -1148,6 +1345,20 @@ footer span { color: var(--accent); }
             電話占いヴェルニの占い師・サービス情報を解説するアフィリエイトサイト。占い師の口コミ・評判・料金・予約方法など幅広いコンテンツを自社運営。<br>
             SEO設計・構成・執筆・サイト管理をすべて担当。ジャンル：占い・エンタメ
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: tools -->
+    <div id="tab-tools-tab" class="tab-panel reveal">
+      <div class="works-grid">
+        <div class="work-card">
+          <div>
+            <div class="work-title">SEO分析シート（内部データ可視化）</div>
+            <div class="work-url" style="color:var(--text-light);font-size:.82rem;">Google Apps Script ／ Search Console API ／ PageSpeed Insights API</div>
+          </div>
+          <span class="work-badge">GAS・API連携</span>
+          <div style="font-size:.82rem;color:var(--text-mid);margin-top:.6rem;line-height:1.7;">Google Search ConsoleとPageSpeed Insights APIをGASで連携し、クリック数・表示回数・CTR・順位・Core Web Vitalsをスプレッドシート上に自動集計。月次レポート作成を自動化。</div>
         </div>
       </div>
     </div>
@@ -1252,6 +1463,7 @@ footer span { color: var(--accent); }
 
 <!-- ===== FOOTER ===== -->
 <footer>
+  <div class="footer-deco"></div>
   <div class="footer-brand">Info<span>Success</span>　インフォサクセス</div>
   <p>SEOライター ／ コンサルタント ／ Web制作 ／ GAS開発</p>
 </footer>
