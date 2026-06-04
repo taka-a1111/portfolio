@@ -243,6 +243,25 @@ td a:hover{border-color:var(--rose-deep);}
 .design-text ul{list-style:none;}
 .design-text li{font-size:14px;color:var(--ink-mid);padding:9px 0 9px 26px;position:relative;border-bottom:1px solid var(--line);}
 .design-text li::before{content:'';position:absolute;left:4px;top:18px;width:7px;height:7px;border-radius:50%;background:var(--rose);}
+.rank-list{display:flex;flex-direction:column;gap:10px;}
+.rank-row{display:flex;align-items:center;gap:16px;background:var(--paper);border:1px solid var(--line);
+  border-radius:12px;padding:13px 18px;transition:transform .25s,box-shadow .25s;}
+.rank-row:hover{transform:translateX(3px);box-shadow:var(--shadow);}
+.rank-badge{flex:none;width:50px;height:50px;border-radius:12px;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;font-family:'Shippori Mincho',serif;line-height:1;}
+.rank-badge .rk{font-weight:700;font-size:22px;}
+.rank-badge .rk small{font-size:.5em;}
+.rank-badge.r1{background:linear-gradient(135deg,#e8c66a,#c79a5a);color:#3a2c12;}
+.rank-badge.r2{background:linear-gradient(135deg,#f3d9df,#e3a9b6);color:#7a2f43;}
+.rank-badge.r3{background:var(--rose-pale);color:var(--rose-deep);}
+.rank-info .rn{font-size:14px;font-weight:700;color:var(--ink);line-height:1.5;}
+.rank-info .rp{font-size:12px;color:var(--ink-light);margin-top:3px;}
+.rank-foot{font-size:11.5px;color:var(--ink-light);margin-top:16px;line-height:1.7;}
+.cw-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px;}
+.cw-stat{background:var(--cream);border:1px solid var(--line);border-radius:16px;padding:28px 26px;text-align:center;}
+.cw-stat .v{font-family:'Shippori Mincho',serif;font-weight:700;font-size:34px;color:var(--rose-deep);line-height:1;}
+.cw-stat .v small{font-size:.42em;color:var(--ink-mid);margin-left:3px;}
+.cw-stat .k{font-size:13px;color:var(--ink-mid);margin-top:12px;line-height:1.6;}
 
 /* ===== GAS ===== */
 .gas{background:var(--cream);}
@@ -324,7 +343,7 @@ footer{background:#241d1a;color:rgba(255,255,255,.6);padding:56px 0 30px;}
   .award-rows{grid-template-columns:1fr 1fr;}
 }
 @media(max-width:520px){
-  .work-grid,.proof-grid,.cond-grid{grid-template-columns:1fr;}
+  .work-grid,.proof-grid,.cond-grid,.cw-stats{grid-template-columns:1fr;}
   .hero-stats{grid-template-columns:repeat(2,1fr);}
   .hero-btns{flex-direction:column;}
   .btn{width:100%;justify-content:center;}
@@ -663,35 +682,58 @@ footer{background:#241d1a;color:rgba(255,255,255,.6);padding:56px 0 30px;}
   </div>
 </section>
 
-<!-- LOGO / DESIGN -->
+<!-- LOGO / DESIGN + CROWDWORKS RANKING -->
 <section class="design">
   <div class="container">
     <div class="sec-head reveal">
-      <span class="sec-label">Logo & Design</span>
-      <h2 class="sec-title">ロゴ・デザイン制作</h2>
-      <p class="sec-desc">Web制作にとどまらず、ブランドの土台となるロゴ・グラフィックの制作にも対応しています。</p>
+      <span class="sec-label">Awards & Rankings</span>
+      <h2 class="sec-title">ロゴ・デザイン制作と<br>クラウドワークス実績</h2>
+      <p class="sec-desc">Web制作にとどまらず、ロゴ・グラフィック制作にも対応。クラウドワークスでは、ロゴ・イラスト・ライティングなど複数ジャンルで上位にランクインしています。</p>
     </div>
     <div class="design-inner">
       <div class="award-card reveal">
         <div class="award-ribbon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
-          コンペティション採用
+          ロゴコンペ｜採用作品
         </div>
-        <h3>ロゴコンペで採用・受賞<br>（Nishimura Global Peace）</h3>
+        <h3>ロゴコンペで<br>採用（当選作品）</h3>
         <div class="award-rows">
-          <div class="ar"><div class="v">245<small>点</small></div><div class="k">総提案数の中から採用</div></div>
+          <div class="ar"><div class="v">245<small>点</small></div><div class="k">総提案の中から採用</div></div>
           <div class="ar"><div class="v">¥110,000</div><div class="k">受賞・納品金額</div></div>
         </div>
+        <p style="position:relative;z-index:1;font-size:12.5px;color:rgba(255,255,255,.7);margin-top:22px;line-height:1.8;">AI（Illustrator）・PSD・PNG など納品形式に対応。白抜き版など用途別バリエーションも作成します。</p>
       </div>
       <div class="design-text reveal rd-1">
-        <h3>コンセプトから納品データまで一貫対応</h3>
-        <p>多数の提案が集まるロゴコンペティションでの採用実績。ブランドの意図を汲み取った提案から、入稿可能な形式での納品までを担当しました。</p>
-        <ul>
-          <li>AI（Illustrator）・PSD・PNG など納品形式に対応</li>
-          <li>白抜き（ノックアウト）版など、用途別バリエーションも作成</li>
-          <li>インター校サポート向けロゴ（JBJB）など制作実績あり</li>
-        </ul>
+        <h3 style="margin-bottom:20px;">クラウドワークス 上位ランクイン実績</h3>
+        <div class="rank-list">
+          <div class="rank-row">
+            <div class="rank-badge r1"><span class="rk">1<small>位</small></span></div>
+            <div class="rank-info"><div class="rn">イラスト作成コンペ 採用ランキング</div><div class="rp">2025年4月（週間）</div></div>
+          </div>
+          <div class="rank-row">
+            <div class="rank-badge r2"><span class="rk">2<small>位</small></span></div>
+            <div class="rank-info"><div class="rn">ロゴ作成・ロゴデザインコンペ 採用ランキング</div><div class="rp">2026年4〜5月（週間）</div></div>
+          </div>
+          <div class="rank-row">
+            <div class="rank-badge r2"><span class="rk">2<small>位</small></span></div>
+            <div class="rank-info"><div class="rn">ネーミングコンペ 採用ランキング</div><div class="rp">2023年5月（週間）</div></div>
+          </div>
+          <div class="rank-row">
+            <div class="rank-badge r3"><span class="rk">3<small>位</small></span></div>
+            <div class="rank-info"><div class="rn">ライター部門 契約ランキング</div><div class="rp">2025年10月（週間）</div></div>
+          </div>
+          <div class="rank-row">
+            <div class="rank-badge r3"><span class="rk">4<small>位</small></span></div>
+            <div class="rank-info"><div class="rn">ロゴデザインコンペ 採用ランキング／ライター部門 契約ランキング</div><div class="rp">2026年5月（月間）</div></div>
+          </div>
+        </div>
+        <p class="rank-foot">※ クラウドワークス内の各ランキングにおける上位ランクイン実績の抜粋です。ロゴ・イラスト・ネーミング・ライティングの複数ジャンルで継続的に上位に入っています。</p>
       </div>
+    </div>
+    <div class="cw-stats reveal">
+      <div class="cw-stat"><div class="v">4<small>位</small></div><div class="k">ライター部門 契約ランキング<br>（月間・2026年5月）— 継続して発注を獲得</div></div>
+      <div class="cw-stat"><div class="v">5<small>ジャンル</small></div><div class="k">ロゴ・イラスト・ネーミング・コピー・ライティングで上位ランクイン</div></div>
+      <div class="cw-stat"><div class="v">6,600<small>回+</small></div><div class="k">クラウドワークスでの<br>プロフィール閲覧数</div></div>
     </div>
   </div>
 </section>
