@@ -223,6 +223,9 @@ td a:hover{border-color:var(--rose-deep);}
 .g-bridal{background:linear-gradient(135deg,#6e4f63 0%,#3a2433 100%);}
 .g-const{background:linear-gradient(135deg,#5a5246 0%,#332f28 100%);}
 .g-cosmos{background:linear-gradient(135deg,#c46b86 0%,#8a3f5a 100%);}
+.g-hanaze{background:linear-gradient(135deg,#1a1410 0%,#3d2817 50%,#1a1410 100%);color:#d4a747;}
+.g-hanaze .wk-cat{color:#d4a747;}
+.g-hanaze .wk-name{color:#e8c466;}
 
 /* ===== LOGO / DESIGN ===== */
 .design{background:var(--paper);}
@@ -554,7 +557,7 @@ footer{background:#241d1a;color:rgba(255,255,255,.6);padding:56px 0 30px;}
     <div class="sec-head reveal">
       <span class="sec-label">Web Production</span>
       <h2 class="sec-title">Web制作実績</h2>
-      <p class="sec-desc">建具・製造業からIT・防水・飲食・サービス・建設まで、幅広い業種のサイトを制作。各カードからライブサイトをご覧いただけます。</p>
+      <p class="sec-desc">本番納品済みのクライアントサイト（水上工芸・コスモスの里）に加え、AI連携デモや業種別の制作実績まで掲載。各カードからライブサイトをご覧いただけます。</p>
     </div>
     <div class="work-grid">
 
@@ -571,7 +574,41 @@ footer{background:#241d1a;color:rgba(255,255,255,.6);padding:56px 0 30px;}
           <h3>水上工芸 MIZUKAMI CRAFTS</h3>
           <div class="wk-meta">建具製作・Next.js・本番公開</div>
           <p>建具工事の事業者サイトをNext.jsで新規構築。理念・事業内容・採用・施工事例・ブログまでを設計し、実データで本番公開しました。</p>
-          <a class="wk-link" href="https://mizukami-kougei-1ysg.vercel.app" target="_blank" rel="noopener">サイトを見る <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+          <a class="wk-link" href="https://mizukamikougei.com" target="_blank" rel="noopener">サイトを見る <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+        </div>
+      </div>
+
+      <!-- コスモスの里（本番納品） -->
+      <div class="wk reveal rd-1">
+        <div class="wk-shot">
+          <span class="wk-badge badge-live">実案件・本番</span>
+          <div class="wk-browser">
+            <div class="wk-bar"><span class="wk-dot" style="background:#f3796e"></span><span class="wk-dot" style="background:#f6c453"></span><span class="wk-dot" style="background:#62c46e"></span><span class="wk-url">breakthrough-co.jp/cosmos</span></div>
+            <div class="wk-canvas g-cosmos"><span class="wk-cat">介護・福祉</span><span class="wk-name">コスモスの里</span></div>
+          </div>
+        </div>
+        <div class="wk-body">
+          <h3>コスモスの里</h3>
+          <div class="wk-meta">介護老人保健施設・WordPress本番納品</div>
+          <p>広島県福山市の介護老人保健施設サイトをWordPressカスタムテーマで制作。温かみのあるデザインとスクロール演出、レスポンシブ対応で構築し、クライアントサーバーへ本番納品（2026年4月）。</p>
+          <a class="wk-link" href="https://breakthrough-co.jp/cosmos/" target="_blank" rel="noopener">サイトを見る <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+        </div>
+      </div>
+
+      <!-- 花筮 HANAZE（AI占い） -->
+      <div class="wk reveal rd-2">
+        <div class="wk-shot">
+          <span class="wk-badge badge-demo">DEMO</span>
+          <div class="wk-browser">
+            <div class="wk-bar"><span class="wk-dot" style="background:#f3796e"></span><span class="wk-dot" style="background:#f6c453"></span><span class="wk-dot" style="background:#62c46e"></span><span class="wk-url">hanaze.vercel.app</span></div>
+            <div class="wk-canvas g-hanaze"><span class="wk-cat">AI×占い</span><span class="wk-name">花筮 HANAZE</span></div>
+          </div>
+        </div>
+        <div class="wk-body">
+          <h3>花筮 HANAZE</h3>
+          <div class="wk-meta">花札 × AI占い・API連携デモ</div>
+          <p>花札12枚をモチーフにしたAI占いサイト。SVGで描いた花札カードの直感選択UIに、自由入力テキストへの占い結果生成をAPI連携で実装。神秘的なダークゴールド基調で構築しました。</p>
+          <a class="wk-link" href="https://hanaze.vercel.app" target="_blank" rel="noopener">デモを見る <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
         </div>
       </div>
 
@@ -660,22 +697,7 @@ footer{background:#241d1a;color:rgba(255,255,255,.6);padding:56px 0 30px;}
         </div>
       </div>
 
-      <!-- コスモスの里 -->
-      <div class="wk reveal">
-        <div class="wk-shot">
-          <span class="wk-badge badge-live">本番納品</span>
-          <div class="wk-browser">
-            <div class="wk-bar"><span class="wk-dot" style="background:#f3796e"></span><span class="wk-dot" style="background:#f6c453"></span><span class="wk-dot" style="background:#62c46e"></span><span class="wk-url">コスモスの里</span></div>
-            <div class="wk-canvas g-cosmos"><span class="wk-cat">介護・福祉</span><span class="wk-name">コスモスの里</span></div>
-          </div>
-        </div>
-        <div class="wk-body">
-          <h3>コスモスの里</h3>
-          <div class="wk-meta">WordPressカスタムテーマ・納品済</div>
-          <p>福祉施設のサイトをWordPressカスタムテーマで制作し、クライアントサーバーにて本番公開・納品（2026年4月）。温かみのある設計で運用しています。</p>
-          <span class="wk-note">クライアントサイトのため掲載のみ</span>
-        </div>
-      </div>
+      <!-- コスモスの里 moved to top -->
 
     </div>
     <p class="works-disclaim">※「DEMO」表記のサイトは提案・コンペ用のデモであり、商用本番利用を目的としたものではありません。最終納品はクライアント様のサーバーへ行います。</p>
