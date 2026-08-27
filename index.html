@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<!-- BUILD_TAG: 2026-07-24a -->
+<!-- BUILD_TAG: 2026-07-24c -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
 <title>インフォサクセス｜SEO・コンテンツ・Web制作・AI/GAS開発のフリーランス</title>
 <meta name="description" content="SEO記事・コンサルティングからWordPress・Next.jsのWeb制作、生成AI×GAS開発まで一貫対応。2011年から積み上げたSEOの知見と生成AIのスピードで、検索上位と売上につながる設計を企画から公開まで手がけます。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -232,6 +233,13 @@ a.wi:hover .go{color:var(--blue);transform:translate(3px,-3px);}
 .ast .c{font-size:12px;color:var(--ink-2);margin-top:10px;line-height:1.85;}
 
 /* AI section */
+.aibar{display:flex;align-items:center;gap:26px;flex-wrap:wrap;background:var(--card);border:1px solid var(--line-d);border-radius:22px;padding:22px 30px;margin-bottom:22px;}
+.aibar .kk{font-family:var(--s);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-l);white-space:nowrap;}
+.aibar .vv{font-size:19px;font-weight:800;letter-spacing:-.02em;white-space:nowrap;}
+.aibar .ss{font-size:12.5px;color:var(--d-3);white-space:nowrap;}
+.aibar .ll{font-size:12.5px;color:var(--d-2);line-height:1.85;flex:1;min-width:260px;border-left:1px solid var(--line-d);padding-left:26px;}
+.ai2{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:22px;align-items:stretch;}
+.ai4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;align-items:stretch;}
 .aitop{display:grid;grid-template-columns:1fr 2fr;gap:22px;margin-bottom:22px;}
 .plan{background:var(--card);border:1px solid var(--line-d);border-radius:22px;padding:30px;}
 .plan .k{font-family:var(--s);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-l);}
@@ -243,13 +251,15 @@ a.wi:hover .go{color:var(--blue);transform:translate(3px,-3px);}
 .feat .k::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--blue-l);box-shadow:0 0 0 4px rgba(125,146,255,.2);}
 .feat h3{font-size:clamp(19px,2.3vw,26px);font-weight:800;letter-spacing:-.025em;margin:14px 0 10px;line-height:1.4;}
 .feat p{font-size:13.5px;line-height:1.95;color:var(--d-2);}
+.feat ul{flex:1;}
+.feat .st{margin-top:auto;}
 .feat ul{list-style:none;margin-top:16px;display:grid;gap:8px;}
 .feat li{font-size:12.5px;color:var(--d-2);display:flex;gap:9px;line-height:1.8;}
 .feat li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--blue-l);flex-shrink:0;margin-top:9px;}
 .feat .st{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line-d);}
 .feat .st span{font-family:var(--s);font-size:10.5px;color:var(--d-3);border:1px solid var(--line-d);border-radius:100px;padding:4px 11px;}
 .ai3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
-.aic{background:var(--card);border:1px solid var(--line-d);border-radius:22px;padding:28px;transition:.3s;}
+.aic{background:var(--card);border:1px solid var(--line-d);border-radius:22px;padding:28px;transition:.3s;display:flex;flex-direction:column;}
 .aic:hover{border-color:rgba(125,146,255,.4);transform:translateY(-4px);}
 .aic h3{font-size:16px;font-weight:800;letter-spacing:-.02em;margin-bottom:11px;}
 .aic p{font-size:13px;line-height:1.9;color:var(--d-2);}
@@ -347,6 +357,10 @@ footer{background:var(--dark-2);color:var(--d-3);padding:80px 0 36px;}
   .ag{grid-template-columns:1fr;}
   .ast{grid-template-columns:1fr;}
   .aitop{grid-template-columns:1fr;}
+  .ai2{grid-template-columns:1fr;}
+  .ai4{grid-template-columns:repeat(2,1fr);}
+  .aibar{flex-direction:column;align-items:flex-start;gap:14px;}
+  .aibar .ll{border-left:none;padding-left:0;border-top:1px solid var(--line-d);padding-top:14px;}
   .ai3{grid-template-columns:1fr;}
   .pf{grid-template-columns:1fr;gap:36px;}
   .ct{grid-template-columns:1fr;gap:44px;}
@@ -361,6 +375,7 @@ footer{background:var(--dark-2);color:var(--d-3);padding:80px 0 36px;}
   .cm{grid-template-columns:1fr;}
   .tr .u{display:none;}
   .wi{grid-template-columns:1fr;gap:6px;}
+  .ai4{grid-template-columns:1fr;}
   .fg{grid-template-columns:1fr;}
   .fft{flex-direction:column;align-items:stretch;}
   .sub{justify-content:center;}
@@ -564,44 +579,38 @@ footer{background:var(--dark-2);color:var(--d-3);padding:80px 0 36px;}
     </div>
     <div class="wtop" data-rv><b>6 Sites</b><span>ALL IN PRODUCTION ／ すべて本番公開済み</span></div>
     <div class="wkl">
-      <a class="wk" data-rv href="https://mizukamikougei.com" target="_blank" rel="noopener">
+      <div class="wk" data-rv>
         <span class="no">01</span>
-        <div class="nm">建具製作・内装施工会社<i>建具・製造業／三重県伊勢市／Next.js</i></div>
+        <div class="nm">建具製作・内装施工会社<i>建具・製造業／Next.js</i></div>
         <p class="ds">建具工事の事業者サイトをNext.jsで新規構築。理念・事業内容・採用・施工事例・ブログまでを設計し、実データで本番公開しました。</p>
-        <div class="sd"><span class="lv">LIVE</span><span class="dm">mizukamikougei.com</span><span class="se">見る<svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></span></div>
-      </a>
-      <a class="wk" data-rv href="https://athlix2026.com" target="_blank" rel="noopener">
+      </div>
+      <div class="wk" data-rv>
         <span class="no">02</span>
         <div class="nm">スポーツ×組織開発企業<i>スポーツ・組織開発／コーポレートサイト</i></div>
         <p class="ds">「スポーツ経済圏」を掲げる企業のコーポレートサイト。課題提起から5つの事業の柱、選ばれる理由、代表メッセージ、導入フロー、FAQまでを一本の説得線として設計しました。</p>
-        <div class="sd"><span class="lv">LIVE</span><span class="dm">athlix2026.com</span><span class="se">見る<svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></span></div>
-      </a>
-      <a class="wk" data-rv href="https://russia-suisan.com" target="_blank" rel="noopener">
+      </div>
+      <div class="wk" data-rv>
         <span class="no">03</span>
-        <div class="nm">水産物輸入卸企業<i>水産・貿易／東京・築地／WordPress</i></div>
+        <div class="nm">水産物輸入卸企業<i>水産・貿易／WordPress</i></div>
         <p class="ds">水産物の輸入卸を手がける企業サイト。取扱商品・現場写真・当社の強み・取引の流れ・対応可能な取引を整理し、法人取引の問い合わせにつながる導線で構築しました。</p>
-        <div class="sd"><span class="lv">LIVE</span><span class="dm">russia-suisan.com</span><span class="se">見る<svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></span></div>
-      </a>
-      <a class="wk" data-rv href="https://legends1999.net" target="_blank" rel="noopener">
+      </div>
+      <div class="wk" data-rv>
         <span class="no">04</span>
-        <div class="nm">電気設備・空調工事会社<i>電気設備・空調／大阪／WordPress</i></div>
+        <div class="nm">電気設備・空調工事会社<i>電気設備・空調／WordPress</i></div>
         <p class="ds">「暮らしと産業の、その先へ。」をコンセプトにした電気設備・空調工事会社のサイト。堅実な業種特性に合わせ、施工領域と対応力が一目で伝わる構成にしています。</p>
-        <div class="sd"><span class="lv">LIVE</span><span class="dm">legends1999.net</span><span class="se">見る<svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></span></div>
-      </a>
-      <a class="wk" data-rv href="https://salonde-kids.net" target="_blank" rel="noopener">
+      </div>
+      <div class="wk" data-rv>
         <span class="no">05</span>
-        <div class="nm">地域子育て支援センター<i>NPO・子育て支援／奈良県天理市／WordPress</i></div>
+        <div class="nm">地域子育て支援センター<i>NPO・子育て支援／WordPress</i></div>
         <p class="ds">地域子育て支援を担うNPO法人のサイト。一時預かり・親子遊び広場・育児相談といった利用者が探す情報に最短で届く設計とし、クライアントサーバーへ本番納品しました。</p>
-        <div class="sd"><span class="lv">LIVE</span><span class="dm">salonde-kids.net</span><span class="se">見る<svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></span></div>
-      </a>
-      <a class="wk" data-rv href="https://breakthrough-co.jp/cosmos/" target="_blank" rel="noopener">
+      </div>
+      <div class="wk" data-rv>
         <span class="no">06</span>
-        <div class="nm">介護老人保健施設<i>介護・福祉／広島県福山市／WordPressカスタムテーマ</i></div>
+        <div class="nm">介護老人保健施設<i>介護・福祉／WordPressカスタムテーマ</i></div>
         <p class="ds">介護老人保健施設のサイトをWordPressカスタムテーマで制作。温かみのあるデザインとスクロール演出、レスポンシブ対応で構築し、クライアントサーバーへ本番納品（2026年4月）。</p>
-        <div class="sd"><span class="lv">LIVE</span><span class="dm">breakthrough-co.jp/cosmos</span><span class="se">見る<svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></span></div>
-      </a>
+      </div>
     </div>
-    <p class="wdisc">※ 掲載サイトはすべて本番公開済みの受託案件です。守秘の観点からクライアント名の記載は控えていますが、各行から実際のサイトをご確認いただけます。</p>
+    <p class="wdisc">※ 掲載内容はすべて本番公開済みの受託案件です。守秘のため、クライアント名・所在地・サイトURLの記載は控えております。</p>
   </div>
 </section>
 
@@ -652,17 +661,20 @@ footer{background:var(--dark-2);color:var(--d-3);padding:80px 0 36px;}
       <p data-rv>AIを使うだけなら誰にでもできます。だからこそ2011年から検索と向き合ってきた判断軸が効きます。Claudeを中核に、AIのスピードと量産力を、実績に裏打ちされた品質設計でコントロールします。</p>
     </div>
 
-    <div class="wtop" data-rv><b>業務自動化の受託開発</b><span>要件定義・実装・テスト・運用設計まで一貫</span></div>
-    <div class="aitop" style="margin-top:18px">
-      <div class="plan" data-rv>
-        <div class="k">契約済みプラン</div>
-        <div class="v">Claude Max（20x）</div>
-        <div class="s">月額 $200・個人向け最上位ティア</div>
-        <div class="l">Claude Code CLI で記事生成・ツール開発を自動化 / Claude API で外部サービスと連携 / ChatGPT・Gemini も用途に応じ併用</div>
+    <div class="aibar" data-rv>
+      <div>
+        <div class="kk">契約済みプラン</div>
+        <div class="vv">Claude Max（20x）</div>
+        <div class="ss">月額 $200・個人向け最上位ティア</div>
       </div>
+      <div class="ll">Claude Code CLI で記事生成・ツール開発を自動化 / Claude API で外部サービスと連携 / ChatGPT・Gemini も用途に応じ併用</div>
+    </div>
+
+    <div class="wtop" data-rv><b>業務自動化の受託開発</b><span>要件定義・実装・テスト・運用設計まで一貫</span></div>
+    <div class="ai2" style="margin-top:18px">
       <div class="feat" data-rv>
         <div class="k">稼働中 / 広告運用支援企業</div>
-        <h3>広告クリエイティブ 審査・入稿管理の自動化</h3>
+        <h3>広告クリエイティブ<br>審査・入稿管理の自動化</h3>
         <p>複数商材の広告審査状況を、担当者が手作業で転記していた業務をGASで自動化。読み取り専用の審査シートから進捗シートへ結果を自動反映し、入稿依頼シートへの転記までを一気通貫で処理します。</p>
         <ul>
           <li>5商材・523行の審査結果を自動反映（スペ確認／CL1次／CL2次の3列で原本の値をそのまま表示）</li>
@@ -672,12 +684,9 @@ footer{background:var(--dark-2);color:var(--d-3);padding:80px 0 36px;}
         </ul>
         <div class="st"><span>Google Apps Script</span><span>Chatwork API</span><span>スプレッドシート連携</span><span>時間主導トリガー</span></div>
       </div>
-    </div>
-
-    <div class="aitop" style="grid-template-columns:2fr 1fr">
       <div class="feat" data-rv>
         <div class="k">稼働中 / D2C・EC事業者</div>
-        <h3>問い合わせメール 自動仕分けシステム</h3>
+        <h3>問い合わせメール<br>自動仕分けシステム</h3>
         <p>カスタマーサポート宛のメールを緊急度で自動分類し、スプレッドシート上で一元管理。受信トレイに加えて迷惑メールフォルダも走査し、誤って振り分けられた顧客からの問い合わせも取りこぼしません。</p>
         <ul>
           <li>一覧から実際のGmailへ直接ジャンプ。対応状況を「未対応／対応中／対応済／保留」で管理し、担当者の重複対応を防止</li>
@@ -687,18 +696,14 @@ footer{background:var(--dark-2);color:var(--d-3);padding:80px 0 36px;}
         </ul>
         <div class="st"><span>Google Apps Script</span><span>Gmail API</span><span>スプレッドシート連携</span><span>運用手順書</span></div>
       </div>
-      <div class="plan" data-rv>
-        <div class="k">Self-Developed</div>
-        <div class="v">業種特化型<br>記事生成AIスキル基盤</div>
-        <div class="s">Claude Skills として8種を自作</div>
-        <div class="l">SEO記事構成の自動生成から業種別の長文記事生成までをスキル化。web_searchによる競合分析を組み込み、キーワードから構成・本文・WordPress用HTML出力までを一貫処理します。</div>
-      </div>
     </div>
 
-    <div class="ai3" style="margin-top:22px">
-      <div class="aic" data-rv><h3>SEO記事バッチ生成システム</h3><p>VPS上でClaude Code CLIとGASを連携し、キーワードから記事を一括生成。夜間の自動処理にも対応します。</p></div>
-      <div class="aic" data-rv><h3>案件自動収集ツール</h3><p>クラウドソーシングの新着案件をGASで収集し、AIで分析・ステータス管理。応募候補の選定を効率化します。</p></div>
-      <div class="aic" data-rv><h3>API使用量ダッシュボード</h3><p>SerpApi・Moz・Search Console・各種AI APIなどの使用量を一元可視化し、コスト管理を支援します。</p></div>
+    <div class="wtop" data-rv style="margin-top:34px"><b>自社開発ツール</b><span>SEO・制作業務そのものを自動化</span></div>
+    <div class="ai4" style="margin-top:18px">
+      <div class="aic" data-rv><h3>業種特化型<br>記事生成AIスキル基盤</h3><p>Claude Skills として8種を自作。web_searchによる競合分析を組み込み、キーワードから構成・本文・WordPress用HTML出力までを一貫処理します。</p></div>
+      <div class="aic" data-rv><h3>SEO記事<br>バッチ生成システム</h3><p>VPS上でClaude Code CLIとGASを連携し、キーワードから記事を一括生成。夜間の自動処理にも対応します。</p></div>
+      <div class="aic" data-rv><h3>案件<br>自動収集ツール</h3><p>クラウドソーシングの新着案件をGASで収集し、AIで分析・ステータス管理。応募候補の選定を効率化します。</p></div>
+      <div class="aic" data-rv><h3>API使用量<br>ダッシュボード</h3><p>SerpApi・Moz・Search Console・各種AI APIなどの使用量を一元可視化し、コスト管理を支援します。</p></div>
     </div>
     <div class="tt" data-rv>
       <span>Google Apps Script</span><span>Claude API</span><span>Gemini API</span><span>Claude Code CLI</span><span>Chatwork API</span><span>Gmail API</span><span>Search Console API</span><span>SerpApi / Moz</span><span>GitHub + Vercel</span>
@@ -796,7 +801,7 @@ footer{background:var(--dark-2);color:var(--d-3);padding:80px 0 36px;}
       <div class="flk">
         <a href="#services">Services</a><a href="#seo">SEO実績</a><a href="#works">Web制作</a><a href="#ai">AI・開発</a><a href="#contact">Contact</a>
       </div>
-      <div class="fcp">© 2026 InfoSuccess. All Rights Reserved.　build 2026-07-24a</div>
+      <div class="fcp">© 2026 InfoSuccess. All Rights Reserved.　build 2026-07-24c</div>
     </div>
   </div>
 </footer>
