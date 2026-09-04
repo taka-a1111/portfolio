@@ -382,6 +382,14 @@ footer{background:var(--dark-2);color:var(--d-3);padding:80px 0 36px;}
   .form,.al,.ah{padding:26px;}
   .hs>div{padding:18px 22px 0 0;margin-right:22px;}
 }
+
+    /* 制作実績カードのサイトリンク（2026-09-01 追加） */
+    .wk-link{margin-top:14px}
+    .wk-link a{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:500;
+      letter-spacing:.02em;color:#4a86c8;border-bottom:1px solid rgba(74,134,200,.35);
+      padding-bottom:2px;text-decoration:none;transition:color .3s,border-color .3s}
+    .wk-link a:hover{color:#fff;border-bottom-color:#fff}
+    .wk-link svg{width:13px;height:13px;flex:0 0 auto}
 </style>
 </head>
 <body>
@@ -570,8 +578,9 @@ footer{background:var(--dark-2);color:var(--d-3);padding:80px 0 36px;}
     <div class="wkl">
       <div class="wk" data-rv>
         <span class="no">01</span>
-        <div class="nm">建具製作・内装施工会社<i>建具・製造業／Next.js</i></div>
-        <p class="ds">建具工事の事業者サイトをNext.jsで新規構築。理念・事業内容・採用・施工事例・ブログまでを設計し、実データで本番公開しました。</p>
+        <div class="nm">水上工芸株式会社<i>建具・製造業／Next.js</i></div>
+        <p class="ds">三重県伊勢市の建具工事・キズ補修を手がける企業サイトをNext.jsで新規構築。理念・事業内容・採用・施工事例・ブログまでを設計し、実データで本番公開しました。</p>
+        <p class="wk-link"><a href="https://mizukamikougei.com/" target="_blank" rel="noopener">mizukamikougei.com<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4.5h5.5V10"/><path d="M19.5 4.5L11 13"/><path d="M17 14v5.5H4.5V7H10"/></svg></a></p>
       </div>
       <div class="wk" data-rv>
         <span class="no">02</span>
@@ -580,8 +589,9 @@ footer{background:var(--dark-2);color:var(--d-3);padding:80px 0 36px;}
       </div>
       <div class="wk" data-rv>
         <span class="no">03</span>
-        <div class="nm">水産物輸入卸企業<i>水産・貿易／WordPress</i></div>
-        <p class="ds">水産物の輸入卸を手がける企業サイト。取扱商品・現場写真・当社の強み・取引の流れ・対応可能な取引を整理し、法人取引の問い合わせにつながる導線で構築しました。</p>
+        <div class="nm">ロシア水産株式会社<i>水産・貿易／WordPress</i></div>
+        <p class="ds">ロシア産のカニや冷凍水産物を扱う輸入卸の企業サイト。取扱商品・現場写真・当社の強み・取引の流れ・対応可能な取引を整理し、法人取引の問い合わせにつながる導線で構築しました。</p>
+        <p class="wk-link"><a href="https://russia-suisan.com/" target="_blank" rel="noopener">russia-suisan.com<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4.5h5.5V10"/><path d="M19.5 4.5L11 13"/><path d="M17 14v5.5H4.5V7H10"/></svg></a></p>
       </div>
       <div class="wk" data-rv>
         <span class="no">04</span>
@@ -590,8 +600,9 @@ footer{background:var(--dark-2);color:var(--d-3);padding:80px 0 36px;}
       </div>
       <div class="wk" data-rv>
         <span class="no">05</span>
-        <div class="nm">地域子育て支援センター<i>NPO・子育て支援／WordPress</i></div>
-        <p class="ds">地域子育て支援を担うNPO法人のサイト。一時預かり・親子遊び広場・育児相談といった利用者が探す情報に最短で届く設計とし、クライアントサーバーへ本番納品しました。</p>
+        <div class="nm">サロンドキッズ<i>NPO・子育て支援／WordPress</i></div>
+        <p class="ds">奈良県天理市で7つの事業を運営するNPO法人のサイト。一時預かり・親子遊び広場・育児相談といった利用者が探す情報に最短で届く設計とし、クライアントサーバーへ本番納品しました。</p>
+        <p class="wk-link"><a href="https://salonde-kids.net/" target="_blank" rel="noopener">salonde-kids.net<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4.5h5.5V10"/><path d="M19.5 4.5L11 13"/><path d="M17 14v5.5H4.5V7H10"/></svg></a></p>
       </div>
       <div class="wk" data-rv>
         <span class="no">06</span>
@@ -599,7 +610,7 @@ footer{background:var(--dark-2);color:var(--d-3);padding:80px 0 36px;}
         <p class="ds">介護老人保健施設のサイトをWordPressカスタムテーマで制作。温かみのあるデザインとスクロール演出、レスポンシブ対応で構築し、クライアントサーバーへ本番納品（2026年4月）。</p>
       </div>
     </div>
-    <p class="wdisc">※ 掲載内容はすべて本番公開済みの受託案件です。守秘のため、クライアント名・所在地・サイトURLの記載は控えております。</p>
+    <p class="wdisc">※ 掲載内容はすべて本番公開済みの受託案件です。掲載の許諾をいただいた案件のみ社名とサイトURLを記載し、それ以外は業種と担当範囲のみ記載しています。</p>
   </div>
 </section>
 
